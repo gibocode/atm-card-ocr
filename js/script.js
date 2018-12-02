@@ -31,6 +31,7 @@
         // Capture image from the video camera
         $('#capture').click(function() {
             closeCamera();
+            $(image).show();
             canvas.getContext('2d').drawImage(camera, 0, 0, 300, 150);
             image.src = canvas.toDataURL('image/jpg');
             extractText();
@@ -54,6 +55,7 @@
                 }
             })
             .catch(function (error) {
+                closeCamera();
                 $('#message').html('<span class="alert alert-danger full-width"><strong>Error.</strong> ' + error + '</span>').fadeIn();
             });
     }
@@ -64,7 +66,6 @@
         $('#camera-switch').show().val(1);
         $('#camera-container').hide();
         $('#image-container').show();
-        $(image).show();
         if ($('#camera')[0].srcObject) {
             $.each($('#camera')[0].srcObject.getTracks(), function (index, track) {
                 track.stop();
