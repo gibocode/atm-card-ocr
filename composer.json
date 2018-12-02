@@ -1,0 +1,21 @@
+{
+    "name": "gibocode-atm-card-ocr",
+    "description": "An OCR package that uses tesseract to extract ATM cards information.",
+    "authors": [
+        {
+            "name": "Gilbor Camporazo Jr.",
+            "email": "gilborcamporazojr@programmer.net",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "thiagoalessio/tesseract_ocr": "^2.7",
+        "symfony/var-dumper": "3.4.x-dev"
+    },
+    "autoload": {
+        "classmap": [
+            "lib"
+        ]
+    },
+    "minimum-stability": "dev"
+}
