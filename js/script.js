@@ -54,9 +54,7 @@
                 }
             })
             .catch(function (error) {
-                //alert ("Could not open the camera in the browser.");
-                //console.log("Error: " + error);
-                $('#error').text(error);
+                $('#message').html('<span class="alert alert-danger full-width"><strong>Error.</strong> ' + error + '</span>').fadeIn();
             });
     }
 
@@ -114,7 +112,7 @@
                 if (errorMessage == '') {
                     errorMessage = message;
                 }
-                $('#error').html(errorMessage).show();
+                $('#message').html('<span class="alert alert-danger full-width"><strong>Error.</strong> ' + errorMessage + '</span>').fadeIn();
             }
         });
     }
